@@ -20,9 +20,9 @@ Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya tidak berl
 
 Saya pun juga dulu seperti itu. Saya mulai mengenal R ketika akan menyelesaikan skripsi pada program D-IV di Sekolah Tinggi Ilmu Statistik.
 
-Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program kalian yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa bikin frustasi. 
+Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa bikin frustasi. 
 
-Untuk menghindari masalah yang sebutkan sebelumnya kalian setidaknya perlu memahami R dari ground up, dari basic. 
+Untuk menghindari masalah yang saya sebutkan sebelumnya kalian setidaknya perlu memahami R dari ground up, dari basic. 
 
 Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika ketemu bugs dan kalian bisa menjadi coder yang efisien. Ketika berada di poin ini saya rasa kalian akan mula menikmati menggunakan R, tidak ada lagi frustasi. 
 
