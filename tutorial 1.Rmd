@@ -14,15 +14,13 @@ Hai, saya Marwan. Saya seorang statistisi.
 
 R adalah bahasa pemrograman yang didesain secara khusus untuk analisis statistik dan data visualisation.
 
-R itu cukup popular, apabila di lihat ranking popularitas Bahasa pemrograman di TIOBE INDEX, R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
+R itu cukup populer, apabila di lihat ranking popularitas Bahasa pemrograman di TIOBE INDEX, R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
 
-Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya tidak berlatar belakang programmer, mereka menggunakan R untuk menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya statistisi, data analist, data scientist, dosen, atau mahasiswa yang sedang mengerjakan projek tugas mereka.
+Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya tidak berlatar belakang programmer, mereka menggunakan R untuk menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya statistisi, data analist, data scientist, dosen atau mahasiswa yang sedang mengerjakan projek tugas mereka.
 
 Saya pun juga dulu seperti itu. Saya mulai mengenal R ketika akan menyelesaikan skripsi pada program D-IV di Sekolah Tinggi Ilmu Statistik.
 
-Saya rasa, ini sah – sah saja ya. Namun, masalahnya adalah jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, ketika ketemu bugs dalam program kalian, kalian akan sulit mendeteksinya dan ini bisa bikin kalian frustasi. Saya juga dulu pernah berada di satu poin, di mana saya merasa saya itu tidak bisa, dan mau give up.
-
-Untungnya saya mulai menyadari itu, dan mulai belajar lagi dari basic.
+Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program kalian yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa bikin frustasi. 
 
 Untuk menghindari masalah yang sebutkan sebelumnya kalian setidaknya perlu memahami R dari ground up, dari basic. 
 
@@ -30,13 +28,11 @@ Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika ketemu bugs d
 
 Nah, di series tutorial ini saya akan menemani kalian belajar R dari dasar. Hal – hal apa saja yang perlu kalian ketahui untuk menjadi R user, bahkan pada poin tertentu kalian bisa jadi data analist atau semacamnya. Ikuti terus tutorial saya ya.
 
-Sebelum kita mulai, alangkah baiknya kalau kalian subscribe di chanel saya terlebih dahulu agar kalian bisa mendapatkan notifikasi ketika saya release video baru dan saya bisa lebih termotivasi untuk terus mengembangkan chanel ini.
-
 Nah, hal – hal yang perlu kalian ketahui adalah:
 
-### 1.	Value (nilai) atau object
+### Value (nilai) atau object
 
-Segala sesuatu yang kalian input d R, pada dasarnya adalah literal value atau sederhanya kalian bisa sebut objek, misalnya ketika kalian mengetikan angka 1, 2, 3, dst.
+Segala sesuatu yang kalian input d R, pada dasarnya adalah literal value atau sederhananya kalian bisa sebut objek, misalnya ketika kalian mengetikan angka 1, 2, 3, dst.
 
 ```{r}
 1
@@ -44,11 +40,11 @@ Segala sesuatu yang kalian input d R, pada dasarnya adalah literal value atau se
 ```
 
 
-### 2.	Type data (data types)
+### Type data (data types)
 
-Hal selanjutnya yang perlu kalian pahami adalah setiap literal value atau objek memiliki type datanya masing – masing. Ada beberapa type data di R, antara lain:
+Konsep selanjutnya yang perlu kalian pahami adalah setiap literal value atau objek memiliki type datanya masing – masing. Ada beberapa type data di R, antara lain:
 
--	Numeric yaitu type data berupa angka, terdiri dari type daata double dan integer. 
+-	Numeric yaitu type data berupa angka, terdiri dari type data double dan integer. 
 contoh:
 
 ```{r}
@@ -56,8 +52,16 @@ typeof(5)
 typeof(10.5)
 ```
 
+pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double (decimal). Jadi, secara default, setiap angka yang ada di R memiliki tipe data double. Untuk membuat tipe data integer (bilangan bulat) secara eksplisit, kalian perlu menambahkan `L` dibelakang bilangan tersebu.
+Contoh:
 
--	Character yaitu type data berupa text, ditandai dengan penggunaan “” atau ‘’. 
+```{r}
+typeof(5L)
+```
+
+*catatan: typeof adalah syntax untuk mengecek tipe data dari suatu value atau objek.
+
+-	Character, yaitu type data berupa text. ditandai dengan penggunaan “” atau ‘’. 
 Contoh:
 
 ```{r}
@@ -66,7 +70,7 @@ typeof('my name is Marwan')
 ```
 
 
--	Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE, atau FALSE.
+-	Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE atau FALSE.
 Contoh:
 
 ```{r}
@@ -75,7 +79,7 @@ typeof(FALSE)
 ```
 
 
-### 3.	Variabel
+###	Variabel
 
 Yaitu indentifier atau nama untuk menandai objek atau value dalam memory. Variabel merupakan referensi dari suatu objek yang tersimpan di memory.
 
@@ -101,16 +105,18 @@ print(nama)
 
 Karena nilai 1000 dan karakter "marwan" sekarang sudah tersimpan di memory, maka saya bisa menggunakannya dengan hanya merujuk pada nama variabelnya.
 
-### 4.	Assignment atau binding
+*catatan: R dan bahasa pemrograman pada umumnya memproses data di memory, data tidak tersimpan di disk (drive) komputer kalian sampai benar - benar menyimpannya. jadi data - data tersebut akan hilang ketika keluar dari program. Makanya ada yang mengatakan, R sangat cocok digunakan untuk mengelola data yang besar. Besarnya data yang bisa diolah hanya dibatasi oleh kapasitas memory (RAM) dari komputer. Misalnya PC dengan RAM 16 GB, secara sederhana dapat memproses data dengan ukuran sampai dengan ~ 16 GB.
+
+###	Assignment atau binding
 
 Ketika kalian membuat suatu objek atau nilai, nilai tersebut akan terhapus dengan sendirinya dari memory jika tidak di-assign pada sebuah variabel. Nah proses meng-assign suatu nilai ke variabel disebut assignment atau binding. 
 
-R memiliki konsep “garbage collector” yang tugas membersihkan (menghapus) objek, jika tidak ada variabel yang merujuk ke objek tersebut.
+R memiliki konsep “garbage collector” yang tugasnya membersihkan (menghapus) objek, jika objek tersebut tidak di-assign ke sebuah variabel.
 
-Assignment di R menggunakan <- atau =. Namun, yang sering digunakan adalah <-. Ini vilosofis ya teman – teman, artinya kamu meng-assign nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri. Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan -> untuk meng-assign nilai di sebelah kiri ke variabel yang ada di sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh dalam alur pemrograman.
+Assignment di R menggunakan <- atau =. Namun, yang sering digunakan adalah <-. Ini vilosofis ya, artinya kalian meng-assign nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri. Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan -> untuk meng-assign nilai di sebelah kiri ke variabel yang ada di sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh dalam alur pemrograman.
 
 
-### 5.	Data structure
+###	Data structure
 
 Data structure itu sederhanya bisa kita sebut sebagai container, atau kumpulan dari beberapa literal value.
 Di sini sebenarnya poin yang paling penting menurut saya. Dalam Bahasa pemrograman apapun, kalau kalian paham tentang data structure kalian pada dasarnya sudah paham tentang pemrograman itu sendiri.
@@ -121,11 +127,11 @@ Dalam prakteknya, misalnya data analisis, kalian hampir tidak akan hanya menggun
 
 Di R ada beberapa jenis data structure yang perlu kalian pahami:
 
--	Vector, yaitu kumpul nilai – nilai yang memiliki type data yang sama. Untuk membuat vector, kalian harus menggunakan syntac c(). 
+-	Vector, yaitu kumpulan nilai – nilai yang memiliki type data yang sama. Untuk membuat vector, kalian harus menggunakan syntax c(). 
 Contoh:
 
 ```{r}
-x <- c(1, 2, 3, 4, 5) # vektor integer
+x <- c(1, 2, 3, 4, 5) # vector integer
 y <-  c(1.2, 3.2, 5.0) # vector double
 my_var <- c(TRUE, FALSE, FALSE, TRUE, FALSE) # vector logical
 my_string <- c("hello", "world") #vector karakter
@@ -134,21 +140,23 @@ print(x)
 print(y)
 print(my_var)
 print(my_string)
+
+class(my_string) #character
 ```
 
+*catatan: fungsi print() digunakan untuk menampilkan objek di console. sedangkan class() digunakan untuk mengecek class dari objek tersebut. class akan dibahas di topik sendiri.
 
-
--	List, yaitu Kumpulan nilai yang memiliki type data berbeda. Ini menjadikan list ini cukup powerful ya. Untuk membuat list kalian menggunakan keyword list(). List dapat menampung list lainnya, atau data struktur lain seperti vector, matriks, dan dataframe yang akan dijelaskan pada bagian selanjutnya.
+-	List, yaitu Kumpulan nilai yang memiliki type data berbeda. Ini menjadikan list ini cukup powerful dan fleksibel. Untuk membuat list kalian menggunakan fungsi list(). List dapat menampung list lainnya, atau data struktur lain seperti vector, matriks, dan dataframe yang akan dijelaskan pada bagian selanjutnya.
 Contoh:
 
 ```{r}
-my_list <- list(c(1,2,3), c("hello", "world"))
+my_list <- list(c(1,2,3), c("hello", "world"), list("a", "b", "c"))
 print(my_list)
 ```
 
 
 
--	Matriks, yaitu Kumpulan data dalam bentuk 2 dimensi yang terdiri dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar. Untuk membuat matriks kalian harus menggunakan fungsi matriks(). 
+-	Matriks, yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar. Untuk membuat matriks kalian harus menggunakan fungsi matrix(). 
 Contoh:
 
 ```{r}
@@ -157,7 +165,7 @@ print(my_matrix)
 ```
 
 
--	Data frame, yaitu bentuk special dan bisa dibilang kombinasi dari semua data structure yang disebutkan sebelumnya. Kalian bisa menganalogikan data frame seperti table di excel, yaitu terdiri dari baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah vector, artinya dalam kolom harus memiliki type data yang sama, dan setiap kolom tidak harus sama type datanya antara satu kolom dengan yang lain. Untuk keperluan analisis dan kasus real world, umumnya yang digunakan adalah data frame ini. 
+-	Data frame, yaitu bentuk spesial dan bisa dibilang kombinasi dari semua data structure yang disebutkan sebelumnya. Kalian bisa menganalogikan data frame seperti table di excel, yaitu terdiri dari baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah vector, artinya dalam kolom harus memiliki type data yang sama, dan setiap kolom tidak harus sama type datanya antara satu kolom dengan yang lain. Untuk keperluan analisis dan kasus real world, umumnya yang digunakan adalah data frame ini. 
 Contoh:
 
 ```{r}
@@ -165,39 +173,51 @@ my_df <- data.frame(nomor = c(1,2,3), nama = c("david", "jhon", "doe"))
 print(my_df)
 ```
 
-
-#### Copy on Modify
-
-Salah satu konsep yang penting untuk dipahami di R adalah konsep copy-on-modify, yaitu R akan membuat objek baru jika kalian memodifikasi Sebagian atau seluruh element dari suatu objek. 
-
-Seperti dijelaskan pada bagian sebelumnya, variabel adalah referensi ke suatu objek yang tersimpan di memory. Jika kalian meng-assign nilai yang sudah di-assign pada suatu variabel maka pada dasarnya variabel tersebut juga masih merujuk pada objek yang sama. Misalnya:
-
 ```{r}
-x  <- c(1, 2, 3, 4, 5)
-y <- x
-
+class(my_df)
 ```
 
 
+### Copy on Modify
+
+Salah satu konsep yang penting untuk dipahami di R adalah konsep copy-on-modify, yaitu R akan membuat objek baru jika kalian memodifikasi Sebagian atau seluruh element dari objek tersebut. 
+
+Seperti dijelaskan pada bagian sebelumnya, variabel adalah referensi ke suatu objek yang tersimpan di memory. Jika kalian meng-assign nilai yang sudah di-assign pada suatu variabel maka pada dasarnya variabel baru tersebut juga masih merujuk pada objek yang sama. Misalnya:
+
+```{r}
+x  <- c(1, 2, 3, 4, 5) # assign vector ke variabel x
+y <- x # assign variabel x ke variabel y
+
+print(x)
+print(y)
+
+```
 
 maka y dan x masih merujuk pada objek yang sama yang tersimpan di memory.
 
 ```{r}
-obj_address(x) == obj_address(y) # TRUE
+
+obj_address(x)
+obj_address(y)
+
+obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama
 ```
 
 
 Jika kalian memodifikasi salah satu element dari y, maka y akan membentuk objek baru (meng-copy) dari x dengan element baru yang telah dimodifikasi.
 
 ```{r}
-y[1] <- 100
-obj_address(x) == obj_address(y) #FALSE
+y[1] <- 100 
+
+print(y)
+obj_address(y)
+obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x
 ```
 
 
 Artinya y sekarang adalah objek yang berbeda dari x.
 
-Nah, sampai di sini jika kalian masih bingung kalian bisa pause atau ulang lagi video ini dari awal. Silahkan kalian coba pahami perlahan – lahan. 
+Nah, sampai di sini jika kalian masih bingung kalian bisa pause atau ulang lagi tutorial ini dari awal. Silahkan kalian coba pahami perlahan – lahan. 
 
-Saya akan lanjutkan dengan topik – topik selanjutnya di video part 2 saya selanjutnya. …
+Saya akan lanjutkan dengan topik – topik selanjutnya di part 2 selanjutnya. …
 

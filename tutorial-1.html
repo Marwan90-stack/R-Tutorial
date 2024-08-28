@@ -350,7 +350,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Dasar - Dasar Pemrograman Menggunakan R - part 1</h1>
+<h1 class="title toc-ignore">Dasar - Dasar Pemrograman Menggunakan R -
+part 1</h1>
 <h4 class="author">Marwan</h4>
 <h4 class="date">2024-08-28</h4>
 
@@ -360,25 +361,22 @@ display: none;
 <p>Hai, saya Marwan. Saya seorang statistisi.</p>
 <p>R adalah bahasa pemrograman yang didesain secara khusus untuk
 analisis statistik dan data visualisation.</p>
-<p>R itu cukup popular, apabila di lihat ranking popularitas Bahasa
+<p>R itu cukup populer, apabila di lihat ranking popularitas Bahasa
 pemrograman di TIOBE INDEX, R konsisten berada di jajaran 20 besar. Ini
 artinya, segmen pengguna R itu cukup besar.</p>
 <p>Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya
 tidak berlatar belakang programmer, mereka menggunakan R untuk
 menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya
-statistisi, data analist, data scientist, dosen, atau mahasiswa yang
+statistisi, data analist, data scientist, dosen atau mahasiswa yang
 sedang mengerjakan projek tugas mereka.</p>
 <p>Saya pun juga dulu seperti itu. Saya mulai mengenal R ketika akan
 menyelesaikan skripsi pada program D-IV di Sekolah Tinggi Ilmu
 Statistik.</p>
-<p>Saya rasa, ini sah – sah saja ya. Namun, masalahnya adalah jika
-kalian hanya menggunakan R untuk problem solving kalian tanpa tahu
-basiknya, ketika ketemu bugs dalam program kalian, kalian akan sulit
-mendeteksinya dan ini bisa bikin kalian frustasi. Saya juga dulu pernah
-berada di satu poin, di mana saya merasa saya itu tidak bisa, dan mau
-give up.</p>
-<p>Untungnya saya mulai menyadari itu, dan mulai belajar lagi dari
-basic.</p>
+<p>Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya
+menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian
+sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program
+kalian yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa
+bikin frustasi.</p>
 <p>Untuk menghindari masalah yang sebutkan sebelumnya kalian setidaknya
 perlu memahami R dari ground up, dari basic.</p>
 <p>Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika
@@ -389,15 +387,11 @@ lagi frustasi.</p>
 dasar. Hal – hal apa saja yang perlu kalian ketahui untuk menjadi R
 user, bahkan pada poin tertentu kalian bisa jadi data analist atau
 semacamnya. Ikuti terus tutorial saya ya.</p>
-<p>Sebelum kita mulai, alangkah baiknya kalau kalian subscribe di chanel
-saya terlebih dahulu agar kalian bisa mendapatkan notifikasi ketika saya
-release video baru dan saya bisa lebih termotivasi untuk terus
-mengembangkan chanel ini.</p>
 <p>Nah, hal – hal yang perlu kalian ketahui adalah:</p>
 <div id="value-nilai-atau-object" class="section level3">
-<h3>1. Value (nilai) atau object</h3>
+<h3>Value (nilai) atau object</h3>
 <p>Segala sesuatu yang kalian input d R, pada dasarnya adalah literal
-value atau sederhanya kalian bisa sebut objek, misalnya ketika kalian
+value atau sederhananya kalian bisa sebut objek, misalnya ketika kalian
 mengetikan angka 1, 2, 3, dst.</p>
 <pre class="r"><code>1</code></pre>
 <pre><code>## [1] 1</code></pre>
@@ -405,28 +399,37 @@ mengetikan angka 1, 2, 3, dst.</p>
 <pre><code>## [1] &quot;hello world&quot;</code></pre>
 </div>
 <div id="type-data-data-types" class="section level3">
-<h3>2. Type data (data types)</h3>
-<p>Hal selanjutnya yang perlu kalian pahami adalah setiap literal value
-atau objek memiliki type datanya masing – masing. Ada beberapa type data
-di R, antara lain:</p>
+<h3>Type data (data types)</h3>
+<p>Konsep selanjutnya yang perlu kalian pahami adalah setiap literal
+value atau objek memiliki type datanya masing – masing. Ada beberapa
+type data di R, antara lain:</p>
 <ul>
-<li>Numeric yaitu type data berupa angka, terdiri dari type daata double
+<li>Numeric yaitu type data berupa angka, terdiri dari type data double
 dan integer. contoh:</li>
 </ul>
 <pre class="r"><code>typeof(5)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>typeof(10.5)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
+<p>pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double
+(decimal). Jadi, secara default, setiap angka yang ada di R memiliki
+tipe data double. Untuk membuat tipe data integer (bilangan bulat)
+secara eksplisit, kalian perlu menambahkan <code>L</code> dibelakang
+bilangan tersebu. Contoh:</p>
+<pre class="r"><code>typeof(5L)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>*catatan: typeof adalah syntax untuk mengecek tipe data dari suatu
+value atau objek.</p>
 <ul>
-<li>Character yaitu type data berupa text, ditandai dengan penggunaan “”
-atau ’’. Contoh:</li>
+<li>Character, yaitu type data berupa text. ditandai dengan penggunaan
+“” atau ’’. Contoh:</li>
 </ul>
 <pre class="r"><code>typeof(&quot;hello world&quot;)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <pre class="r"><code>typeof(&#39;my name is Marwan&#39;)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <ul>
-<li>Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE,
+<li>Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE
 atau FALSE. Contoh:</li>
 </ul>
 <pre class="r"><code>typeof(TRUE)</code></pre>
@@ -435,7 +438,7 @@ atau FALSE. Contoh:</li>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 </div>
 <div id="variabel" class="section level3">
-<h3>3. Variabel</h3>
+<h3>Variabel</h3>
 <p>Yaitu indentifier atau nama untuk menandai objek atau value dalam
 memory. Variabel merupakan referensi dari suatu objek yang tersimpan di
 memory.</p>
@@ -470,26 +473,34 @@ print(nama)</code></pre>
 <p>Karena nilai 1000 dan karakter “marwan” sekarang sudah tersimpan di
 memory, maka saya bisa menggunakannya dengan hanya merujuk pada nama
 variabelnya.</p>
+<p>*catatan: R dan bahasa pemrograman pada umumnya memproses data di
+memory, data tidak tersimpan di disk (drive) komputer kalian sampai
+benar - benar menyimpannya. jadi data - data tersebut akan hilang ketika
+keluar dari program. Makanya ada yang mengatakan, R sangat cocok
+digunakan untuk mengelola data yang besar. Besarnya data yang bisa
+diolah hanya dibatasi oleh kapasitas memory (RAM) dari komputer.
+Misalnya PC dengan RAM 16 GB, secara sederhana dapat memproses data
+dengan ukuran sampai dengan ~ 16 GB.</p>
 </div>
 <div id="assignment-atau-binding" class="section level3">
-<h3>4. Assignment atau binding</h3>
+<h3>Assignment atau binding</h3>
 <p>Ketika kalian membuat suatu objek atau nilai, nilai tersebut akan
 terhapus dengan sendirinya dari memory jika tidak di-assign pada sebuah
 variabel. Nah proses meng-assign suatu nilai ke variabel disebut
 assignment atau binding.</p>
-<p>R memiliki konsep “garbage collector” yang tugas membersihkan
-(menghapus) objek, jika tidak ada variabel yang merujuk ke objek
-tersebut.</p>
+<p>R memiliki konsep “garbage collector” yang tugasnya membersihkan
+(menghapus) objek, jika objek tersebut tidak di-assign ke sebuah
+variabel.</p>
 <p>Assignment di R menggunakan &lt;- atau =. Namun, yang sering
-digunakan adalah &lt;-. Ini vilosofis ya teman – teman, artinya kamu
-meng-assign nilai pada sebelah kanan persamaan ke variabel yang ada di
-sebelah kiri. Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa
-menggunakan -&gt; untuk meng-assign nilai di sebelah kiri ke variabel
-yang ada di sebelah kanan persamaan, tapi ini sangat jarang digunakan,
-dan agak aneh dalam alur pemrograman.</p>
+digunakan adalah &lt;-. Ini vilosofis ya, artinya kalian meng-assign
+nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri.
+Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan
+-&gt; untuk meng-assign nilai di sebelah kiri ke variabel yang ada di
+sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh
+dalam alur pemrograman.</p>
 </div>
 <div id="data-structure" class="section level3">
-<h3>5. Data structure</h3>
+<h3>Data structure</h3>
 <p>Data structure itu sederhanya bisa kita sebut sebagai container, atau
 kumpulan dari beberapa literal value. Di sini sebenarnya poin yang
 paling penting menurut saya. Dalam Bahasa pemrograman apapun, kalau
@@ -502,11 +513,11 @@ hanya menggunakan single value saja. Makanya mengapa data structure ini
 perlu benar – benar dipahami.</p>
 <p>Di R ada beberapa jenis data structure yang perlu kalian pahami:</p>
 <ul>
-<li>Vector, yaitu kumpul nilai – nilai yang memiliki type data yang
-sama. Untuk membuat vector, kalian harus menggunakan syntac c().
+<li>Vector, yaitu kumpulan nilai – nilai yang memiliki type data yang
+sama. Untuk membuat vector, kalian harus menggunakan syntax c().
 Contoh:</li>
 </ul>
-<pre class="r"><code>x &lt;- c(1, 2, 3, 4, 5) # vektor integer
+<pre class="r"><code>x &lt;- c(1, 2, 3, 4, 5) # vector integer
 y &lt;-  c(1.2, 3.2, 5.0) # vector double
 my_var &lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE) # vector logical
 my_string &lt;- c(&quot;hello&quot;, &quot;world&quot;) #vector karakter
@@ -519,25 +530,40 @@ print(x)</code></pre>
 <pre><code>## [1]  TRUE FALSE FALSE  TRUE FALSE</code></pre>
 <pre class="r"><code>print(my_string)</code></pre>
 <pre><code>## [1] &quot;hello&quot; &quot;world&quot;</code></pre>
+<pre class="r"><code>class(my_string) #character</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>*catatan: fungsi print() digunakan untuk menampilkan objek di
+console. sedangkan class() digunakan untuk mengecek class dari objek
+tersebut. class akan dibahas di topik sendiri.</p>
 <ul>
 <li>List, yaitu Kumpulan nilai yang memiliki type data berbeda. Ini
-menjadikan list ini cukup powerful ya. Untuk membuat list kalian
-menggunakan keyword list(). List dapat menampung list lainnya, atau data
-struktur lain seperti vector, matriks, dan dataframe yang akan
+menjadikan list ini cukup powerful dan fleksibel. Untuk membuat list
+kalian menggunakan fungsi list(). List dapat menampung list lainnya,
+atau data struktur lain seperti vector, matriks, dan dataframe yang akan
 dijelaskan pada bagian selanjutnya. Contoh:</li>
 </ul>
-<pre class="r"><code>my_list &lt;- list(c(1,2,3), c(&quot;hello&quot;, &quot;world&quot;))
+<pre class="r"><code>my_list &lt;- list(c(1,2,3), c(&quot;hello&quot;, &quot;world&quot;), list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;))
 print(my_list)</code></pre>
 <pre><code>## [[1]]
 ## [1] 1 2 3
 ## 
 ## [[2]]
-## [1] &quot;hello&quot; &quot;world&quot;</code></pre>
+## [1] &quot;hello&quot; &quot;world&quot;
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] &quot;a&quot;
+## 
+## [[3]][[2]]
+## [1] &quot;b&quot;
+## 
+## [[3]][[3]]
+## [1] &quot;c&quot;</code></pre>
 <ul>
-<li>Matriks, yaitu Kumpulan data dalam bentuk 2 dimensi yang terdiri
+<li>Matriks, yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri
 dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang
 kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar.
-Untuk membuat matriks kalian harus menggunakan fungsi matriks().
+Untuk membuat matriks kalian harus menggunakan fungsi matrix().
 Contoh:</li>
 </ul>
 <pre class="r"><code>my_matrix &lt;- matrix(1:9, nrow = 3, ncol = 3)
@@ -547,7 +573,7 @@ print(my_matrix)</code></pre>
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
 <ul>
-<li>Data frame, yaitu bentuk special dan bisa dibilang kombinasi dari
+<li>Data frame, yaitu bentuk spesial dan bisa dibilang kombinasi dari
 semua data structure yang disebutkan sebelumnya. Kalian bisa
 menganalogikan data frame seperti table di excel, yaitu terdiri dari
 baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah
@@ -562,34 +588,50 @@ print(my_df)</code></pre>
 ## 1     1 david
 ## 2     2  jhon
 ## 3     3   doe</code></pre>
-<div id="copy-on-modify" class="section level4">
-<h4>Copy on Modify</h4>
+<pre class="r"><code>class(my_df)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+</div>
+<div id="copy-on-modify" class="section level3">
+<h3>Copy on Modify</h3>
 <p>Salah satu konsep yang penting untuk dipahami di R adalah konsep
 copy-on-modify, yaitu R akan membuat objek baru jika kalian memodifikasi
-Sebagian atau seluruh element dari suatu objek.</p>
+Sebagian atau seluruh element dari objek tersebut.</p>
 <p>Seperti dijelaskan pada bagian sebelumnya, variabel adalah referensi
 ke suatu objek yang tersimpan di memory. Jika kalian meng-assign nilai
 yang sudah di-assign pada suatu variabel maka pada dasarnya variabel
-tersebut juga masih merujuk pada objek yang sama. Misalnya:</p>
-<pre class="r"><code>x  &lt;- c(1, 2, 3, 4, 5)
-y &lt;- x</code></pre>
+baru tersebut juga masih merujuk pada objek yang sama. Misalnya:</p>
+<pre class="r"><code>x  &lt;- c(1, 2, 3, 4, 5) # assign vector ke variabel x
+y &lt;- x # assign variabel x ke variabel y
+
+print(x)</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<pre class="r"><code>print(y)</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
-<pre class="r"><code>obj_address(x) == obj_address(y) # TRUE</code></pre>
+<pre class="r"><code>obj_address(x)</code></pre>
+<pre><code>## [1] &quot;0x10a3aa6b8&quot;</code></pre>
+<pre class="r"><code>obj_address(y)</code></pre>
+<pre><code>## [1] &quot;0x10a3aa6b8&quot;</code></pre>
+<pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
 membentuk objek baru (meng-copy) dari x dengan element baru yang telah
 dimodifikasi.</p>
-<pre class="r"><code>y[1] &lt;- 100
-obj_address(x) == obj_address(y) #FALSE</code></pre>
+<pre class="r"><code>y[1] &lt;- 100 
+
+print(y)</code></pre>
+<pre><code>## [1] 100   2   3   4   5</code></pre>
+<pre class="r"><code>obj_address(y)</code></pre>
+<pre><code>## [1] &quot;0x109fc6e18&quot;</code></pre>
+<pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
 <p>Nah, sampai di sini jika kalian masih bingung kalian bisa pause atau
-ulang lagi video ini dari awal. Silahkan kalian coba pahami perlahan –
-lahan.</p>
-<p>Saya akan lanjutkan dengan topik – topik selanjutnya di video part 2
-saya selanjutnya. …</p>
-</div>
+ulang lagi tutorial ini dari awal. Silahkan kalian coba pahami perlahan
+– lahan.</p>
+<p>Saya akan lanjutkan dengan topik – topik selanjutnya di part 2
+selanjutnya. …</p>
 </div>
 
 
