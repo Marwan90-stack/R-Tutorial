@@ -81,11 +81,13 @@ typeof(FALSE)
 
 ###	Variabel
 
-Yaitu indentifier atau nama untuk menandai objek atau value dalam memory. Variabel merupakan referensi dari suatu objek yang tersimpan di memory.
+Yaitu identifier atau nama untuk menandai objek atau value dalam memory. Variabel merupakan referensi dari suatu objek yang tersimpan di memory.
 
 Jadi, perlu dipahami ya, yang tersimpan di memory itu objek atau value, bukan variabel. Variabel hanya sebagai referensi ke objek tersebut.
 
--	Ada beberapa aturan yang perlu kalian perhatikan terkait pemberian nama variabel, seperti: terdiri dari huruf, angka, dot (.), dan atau underscore (_).
+-	Ada beberapa aturan yang perlu kalian perhatikan terkait pemberian nama variabel, seperti: variabel terdiri dari huruf, angka, dot (.), dan atau underscore (_).
+
+- variabel tidak boleh mengandung spasi, jika kalian menggunakan 2 kata maka harus dipisahkan dengan underscore (_). misalnya: nama variabel `jumlah_siswa` untuk data jumlah siswa atau `suhu_c` untuk menandai satuan dalam celcius.
 
 -	Pemberian nama tidak boleh dimulai dengan angka, dan tidak boleh mengandung special character seperti $, &, ^ , %, dll. Karena karakter – karakter tersebut memiliki fungsi tertentu di R.
 

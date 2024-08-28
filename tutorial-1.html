@@ -439,7 +439,7 @@ atau FALSE. Contoh:</li>
 </div>
 <div id="variabel" class="section level3">
 <h3>Variabel</h3>
-<p>Yaitu indentifier atau nama untuk menandai objek atau value dalam
+<p>Yaitu identifier atau nama untuk menandai objek atau value dalam
 memory. Variabel merupakan referensi dari suatu objek yang tersimpan di
 memory.</p>
 <p>Jadi, perlu dipahami ya, yang tersimpan di memory itu objek atau
@@ -447,8 +447,12 @@ value, bukan variabel. Variabel hanya sebagai referensi ke objek
 tersebut.</p>
 <ul>
 <li><p>Ada beberapa aturan yang perlu kalian perhatikan terkait
-pemberian nama variabel, seperti: terdiri dari huruf, angka, dot (.),
-dan atau underscore (_).</p></li>
+pemberian nama variabel, seperti: variabel terdiri dari huruf, angka,
+dot (.), dan atau underscore (_).</p></li>
+<li><p>variabel tidak boleh mengandung spasi, jika kalian menggunakan 2
+kata maka harus dipisahkan dengan underscore (_). misalnya: nama
+variabel <code>jumlah_siswa</code> untuk data jumlah siswa atau
+<code>suhu_c</code> untuk menandai satuan dalam celcius.</p></li>
 <li><p>Pemberian nama tidak boleh dimulai dengan angka, dan tidak boleh
 mengandung special character seperti $, &amp;, ^ , %, dll. Karena
 karakter – karakter tersebut memiliki fungsi tertentu di R.</p></li>
@@ -610,9 +614,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x156fa0eb8&quot;</code></pre>
+<pre><code>## [1] &quot;0x14855ccb8&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x156fa0eb8&quot;</code></pre>
+<pre><code>## [1] &quot;0x14855ccb8&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -623,7 +627,7 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x150604818&quot;</code></pre>
+<pre><code>## [1] &quot;0x1589e9418&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
