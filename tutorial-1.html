@@ -362,8 +362,9 @@ part 1</h1>
 <p>R adalah bahasa pemrograman yang didesain secara khusus untuk
 analisis statistik dan data visualisation.</p>
 <p>R itu cukup populer, apabila di lihat ranking popularitas Bahasa
-pemrograman di TIOBE INDEX, R konsisten berada di jajaran 20 besar. Ini
-artinya, segmen pengguna R itu cukup besar.</p>
+pemrograman di <a href="https://www.tiobe.com/tiobe-index/">TIOBE
+INDEX</a>, R konsisten berada di jajaran 20 besar. Ini artinya, segmen
+pengguna R itu cukup besar.</p>
 <p>Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya
 tidak berlatar belakang programmer, mereka menggunakan R untuk
 menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya
@@ -381,7 +382,7 @@ frustasi.</p>
 setidaknya perlu memahami R dari ground up, dari basic.</p>
 <p>Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika
 ketemu bugs dan kalian bisa menjadi coder yang efisien. Ketika berada di
-poin ini saya rasa kalian akan mula menikmati menggunakan R, tidak ada
+poin ini saya rasa kalian akan mulai menikmati menggunakan R, tidak ada
 lagi frustasi.</p>
 <p>Nah, di series tutorial ini saya akan menemani kalian belajar R dari
 dasar. Hal – hal apa saja yang perlu kalian ketahui untuk menjadi R
@@ -484,7 +485,9 @@ keluar dari program. Makanya ada yang mengatakan, R sangat cocok
 digunakan untuk mengelola data yang besar. Besarnya data yang bisa
 diolah hanya dibatasi oleh kapasitas memory (RAM) dari komputer.
 Misalnya PC dengan RAM 16 GB, secara sederhana dapat memproses data
-dengan ukuran sampai dengan ~ 16 GB.</p>
+dengan ukuran sampai dengan ~ 16 GB. Berbeda halnya ketika kalian
+menggunakan software data processor seperti ms. excel yang sangat
+terbatas kemampuannya dalam mengolah data yang besar.</p>
 </div>
 <div id="assignment-atau-binding" class="section level3">
 <h3>Assignment atau binding</h3>
@@ -614,9 +617,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x14855ccb8&quot;</code></pre>
+<pre><code>## [1] &quot;0x14805aab8&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x14855ccb8&quot;</code></pre>
+<pre><code>## [1] &quot;0x14805aab8&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -627,7 +630,7 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x1589e9418&quot;</code></pre>
+<pre><code>## [1] &quot;0x14899c418&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
