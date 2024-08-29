@@ -14,7 +14,7 @@ Hai, saya Marwan. Saya seorang statistisi.
 
 R adalah bahasa pemrograman yang didesain secara khusus untuk analisis statistik dan data visualisation.
 
-R itu cukup populer, apabila di lihat ranking popularitas Bahasa pemrograman di TIOBE INDEX, R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
+R itu cukup populer, apabila di lihat ranking popularitas Bahasa pemrograman di [TIOBE INDEX](https://www.tiobe.com/tiobe-index/), R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
 
 Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya tidak berlatar belakang programmer, mereka menggunakan R untuk menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya statistisi, data analist, data scientist, dosen atau mahasiswa yang sedang mengerjakan projek tugas mereka.
 
@@ -24,7 +24,7 @@ Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk
 
 Untuk menghindari masalah yang saya sebutkan sebelumnya kalian setidaknya perlu memahami R dari ground up, dari basic. 
 
-Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika ketemu bugs dan kalian bisa menjadi coder yang efisien. Ketika berada di poin ini saya rasa kalian akan mula menikmati menggunakan R, tidak ada lagi frustasi. 
+Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika ketemu bugs dan kalian bisa menjadi coder yang efisien. Ketika berada di poin ini saya rasa kalian akan mulai menikmati menggunakan R, tidak ada lagi frustasi. 
 
 Nah, di series tutorial ini saya akan menemani kalian belajar R dari dasar. Hal – hal apa saja yang perlu kalian ketahui untuk menjadi R user, bahkan pada poin tertentu kalian bisa jadi data analist atau semacamnya. Ikuti terus tutorial saya ya.
 
@@ -107,7 +107,7 @@ print(nama)
 
 Karena nilai 1000 dan karakter "marwan" sekarang sudah tersimpan di memory, maka saya bisa menggunakannya dengan hanya merujuk pada nama variabelnya.
 
-*catatan: R dan bahasa pemrograman pada umumnya memproses data di memory, data tidak tersimpan di disk (drive) komputer kalian sampai benar - benar menyimpannya. jadi data - data tersebut akan hilang ketika keluar dari program. Makanya ada yang mengatakan, R sangat cocok digunakan untuk mengelola data yang besar. Besarnya data yang bisa diolah hanya dibatasi oleh kapasitas memory (RAM) dari komputer. Misalnya PC dengan RAM 16 GB, secara sederhana dapat memproses data dengan ukuran sampai dengan ~ 16 GB.
+*catatan: R dan bahasa pemrograman pada umumnya memproses data di memory, data tidak tersimpan di disk (drive) komputer kalian sampai benar - benar menyimpannya. jadi data - data tersebut akan hilang ketika keluar dari program. Makanya ada yang mengatakan, R sangat cocok digunakan untuk mengelola data yang besar. Besarnya data yang bisa diolah hanya dibatasi oleh kapasitas memory (RAM) dari komputer. Misalnya PC dengan RAM 16 GB, secara sederhana dapat memproses data dengan ukuran sampai dengan ~ 16 GB. Berbeda halnya ketika kalian menggunakan software data processor seperti ms. excel yang sangat terbatas kemampuannya dalam mengolah data yang besar.
 
 ###	Assignment atau binding
 
