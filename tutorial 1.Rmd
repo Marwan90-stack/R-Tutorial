@@ -1,5 +1,5 @@
 ---
-title: "Dasar - Dasar Pemrograman Menggunakan R - part 1"
+title: "Dasar-Dasar Pemrograman Menggunakan R - part 1"
 author: "Marwan"
 date: "2024-08-28"
 output: html_document
@@ -45,7 +45,9 @@ Segala sesuatu yang kalian input d R, baik text atau numeric, pada dasarnya adal
 
 Konsep selanjutnya yang perlu kalian pahami adalah setiap literal value atau objek memiliki type datanya masing – masing. Ada beberapa type data di R, antara lain:
 
-#### Numeric yaitu type data berupa angka, terdiri dari type data double dan integer. 
+#### Numeric 
+
+Yaitu type data berupa angka, terdiri dari type data double dan integer. 
 contoh:
 
 ```{r}

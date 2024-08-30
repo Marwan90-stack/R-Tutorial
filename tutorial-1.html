@@ -13,7 +13,7 @@
 
 <meta name="date" content="2024-08-28" />
 
-<title>Dasar - Dasar Pemrograman Menggunakan R - part 1</title>
+<title>Dasar-Dasar Pemrograman Menggunakan R - part 1</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,7 +350,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Dasar - Dasar Pemrograman Menggunakan R -
+<h1 class="title toc-ignore">Dasar-Dasar Pemrograman Menggunakan R -
 part 1</h1>
 <h4 class="author">Marwan</h4>
 <h4 class="date">2024-08-28</h4>
@@ -405,10 +405,10 @@ world”.</p>
 <p>Konsep selanjutnya yang perlu kalian pahami adalah setiap literal
 value atau objek memiliki type datanya masing – masing. Ada beberapa
 type data di R, antara lain:</p>
-<div id="numeric-yaitu-type-data-berupa-angka-terdiri-dari-type-data-double-dan-integer." class="section level4">
-<h4>Numeric yaitu type data berupa angka, terdiri dari type data double
-dan integer.</h4>
-<p>contoh:</p>
+<div id="numeric" class="section level4">
+<h4>Numeric</h4>
+<p>Yaitu type data berupa angka, terdiri dari type data double dan
+integer. contoh:</p>
 <pre class="r"><code>typeof(5)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>typeof(10.5)</code></pre>
@@ -652,9 +652,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x12f8ee588&quot;</code></pre>
+<pre><code>## [1] &quot;0x136c77b88&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x12f8ee588&quot;</code></pre>
+<pre><code>## [1] &quot;0x136c77b88&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -665,7 +665,7 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x12fc5caa8&quot;</code></pre>
+<pre><code>## [1] &quot;0x126fd2228&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
