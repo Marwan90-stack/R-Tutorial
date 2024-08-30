@@ -570,9 +570,12 @@ print(x)</code></pre>
 <pre><code>## [1] &quot;hello&quot; &quot;world&quot;</code></pre>
 <pre class="r"><code>class(my_string) #character</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>*catatan: fungsi print() digunakan untuk menampilkan objek di
-console. sedangkan class() digunakan untuk mengecek class dari objek
-tersebut. class akan dibahas di topik sendiri.</p>
+<p>*catatan: fungsi <code>print()</code> digunakan untuk menampilkan
+objek di console. sedangkan <code>class()</code> digunakan untuk
+mengecek class dari objek tersebut. class akan dibahas di topik sendiri.
+penggunaan fungsi <code>print()</code> sebenarnya opsional, kalian masih
+tetap bisa menampilkan nilai suatu variabel di console tanpa harus
+menggunakan <code>print()</code>.</p>
 </div>
 <div id="list" class="section level4">
 <h4>List</h4>
@@ -652,9 +655,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x133315188&quot;</code></pre>
+<pre><code>## [1] &quot;0x158392588&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x133315188&quot;</code></pre>
+<pre><code>## [1] &quot;0x158392588&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -665,7 +668,7 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x1331d8a28&quot;</code></pre>
+<pre><code>## [1] &quot;0x15871f428&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>

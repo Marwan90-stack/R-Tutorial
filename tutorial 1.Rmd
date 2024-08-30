@@ -178,7 +178,7 @@ print(my_string)
 class(my_string) #character
 ```
 
-*catatan: fungsi print() digunakan untuk menampilkan objek di console. sedangkan class() digunakan untuk mengecek class dari objek tersebut. class akan dibahas di topik sendiri.
+*catatan: fungsi `print()` digunakan untuk menampilkan objek di console. sedangkan `class()` digunakan untuk mengecek class dari objek tersebut. class akan dibahas di topik sendiri. penggunaan fungsi `print()` sebenarnya opsional, kalian masih tetap bisa menampilkan nilai suatu variabel di console tanpa harus menggunakan `print()`.
 
 #### List 
 
