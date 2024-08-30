@@ -361,7 +361,7 @@ part 1</h1>
 <p>Hai, saya Marwan. Saya seorang statistisi.</p>
 <p>R adalah bahasa pemrograman yang didesain secara khusus untuk
 analisis statistik dan data visualisation.</p>
-<p>R itu cukup populer, apabila di lihat ranking popularitas Bahasa
+<p>R itu cukup populer. Apabila dilihat ranking popularitas bahasa
 pemrograman di <a href="https://www.tiobe.com/tiobe-index/">TIOBE
 INDEX</a>, R konsisten berada di jajaran 20 besar. Ini artinya, segmen
 pengguna R itu cukup besar.</p>
@@ -375,9 +375,9 @@ menyelesaikan skripsi pada program D-IV di Sekolah Tinggi Ilmu
 Statistik.</p>
 <p>Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya
 menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian
-sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program
-yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa bikin
-frustasi.</p>
+sangat rentan dengan masalah. Misalnya, ketika menemukan bugs atau
+terjadi error dalam program yang kalian buat, kalian akan sulit
+mengatasinya dan ini bisa bikin frustasi.</p>
 <p>Untuk menghindari masalah yang saya sebutkan sebelumnya kalian
 setidaknya perlu memahami R dari ground up, dari basic.</p>
 <p>Dengan memahami basiknya, kalian bisa menyelesaikan masalah ketika
@@ -389,11 +389,12 @@ dasar. Hal – hal apa saja yang perlu kalian ketahui untuk menjadi R
 user, bahkan pada poin tertentu kalian bisa jadi data analist atau
 semacamnya. Ikuti terus tutorial saya ya.</p>
 <p>Nah, hal – hal yang perlu kalian ketahui adalah:</p>
-<div id="value-nilai-atau-object" class="section level3">
-<h3>Value (nilai) atau object</h3>
-<p>Segala sesuatu yang kalian input d R, pada dasarnya adalah literal
-value atau sederhananya kalian bisa sebut objek, misalnya ketika kalian
-mengetikan angka 1, 2, 3, dst.</p>
+<div id="literal-value-nilai" class="section level3">
+<h3>Literal Value (nilai)</h3>
+<p>Segala sesuatu yang kalian input d R, baik text atau numeric, pada
+dasarnya adalah literal value atau sederhananya kalian bisa sebut objek,
+misalnya ketika kalian mengetikan angka 1, 2, 3, dan text seperti “hello
+world”.</p>
 <pre class="r"><code>1</code></pre>
 <pre><code>## [1] 1</code></pre>
 <pre class="r"><code>&quot;hello world&quot;</code></pre>
@@ -404,39 +405,44 @@ mengetikan angka 1, 2, 3, dst.</p>
 <p>Konsep selanjutnya yang perlu kalian pahami adalah setiap literal
 value atau objek memiliki type datanya masing – masing. Ada beberapa
 type data di R, antara lain:</p>
-<ul>
-<li>Numeric yaitu type data berupa angka, terdiri dari type data double
-dan integer. contoh:</li>
-</ul>
+<div id="numeric-yaitu-type-data-berupa-angka-terdiri-dari-type-data-double-dan-integer." class="section level4">
+<h4>Numeric yaitu type data berupa angka, terdiri dari type data double
+dan integer.</h4>
+<p>contoh:</p>
 <pre class="r"><code>typeof(5)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>typeof(10.5)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<p>pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double
+<p>Pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double
 (decimal). Jadi, secara default, setiap angka yang ada di R memiliki
 tipe data double. Untuk membuat tipe data integer (bilangan bulat)
 secara eksplisit, kalian perlu menambahkan <code>L</code> dibelakang
-bilangan tersebu. Contoh:</p>
+bilangan tersebut. Contoh:</p>
 <pre class="r"><code>typeof(5L)</code></pre>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<p>*catatan: typeof adalah syntax untuk mengecek tipe data dari suatu
-value atau objek.</p>
-<ul>
-<li>Character, yaitu type data berupa text. ditandai dengan penggunaan
-“” atau ’’. Contoh:</li>
-</ul>
+<p>*catatan: <code>typeof()</code> adalah syntax untuk mengecek tipe
+data dari suatu value atau objek.</p>
+</div>
+<div id="character" class="section level4">
+<h4>Character</h4>
+<p>Yaitu type data berupa text. ditandai dengan penggunaan “” atau ’’.
+Contoh:</p>
 <pre class="r"><code>typeof(&quot;hello world&quot;)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <pre class="r"><code>typeof(&#39;my name is Marwan&#39;)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<ul>
-<li>Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE
-atau FALSE. Contoh:</li>
-</ul>
+</div>
+<div id="logical" class="section level4">
+<h4>Logical</h4>
+<p>Yaitu type data berupa logika. Nilainya terdiri dari
+<code>TRUE</code> atau <code>FALSE</code>. Type data ini umumnya
+digunakan untuk mengecek kondisi tertentu baik bernilai benar
+(<code>TRUE</code>) atau salah (<code>FALSE</code>). Contoh:</p>
 <pre class="r"><code>typeof(TRUE)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <pre class="r"><code>typeof(FALSE)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
+</div>
 </div>
 <div id="variabel" class="section level3">
 <h3>Variabel</h3>
@@ -504,7 +510,32 @@ nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri.
 Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan
 -&gt; untuk meng-assign nilai di sebelah kiri ke variabel yang ada di
 sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh
-dalam alur pemrograman.</p>
+dalam alur pemrograman. Contoh assignment sebenarnya sudah ditunjukan
+pada topik variabel di atas.</p>
+<p>Penggunaan type data di R bersifat dinamis (dynamically typed). Ini
+artinya, tidak seperti bahasa pemrograman yang bersifat statis
+(contohnya: C, Java), assignment suatu nilai ke variabel tidak perlu
+dideklarasikan type datanya terlebih dahulu.</p>
+<p>Contoh:</p>
+<pre class="r"><code>x &lt;- 5
+typeof(x)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<p>Pada contoh di atas, saya meng-assign nilai <code>5</code> pada
+variabel <code>x</code>. Meskipun saya tidak mendaklarasikan type
+datanya, R akan mengetahui bahwa angka <code>5</code> adalah type data
+numeric (double). Nah jika dalam perjalanannya saya mau merubah nilai
+<code>x</code> dengan type data character, maka saya hanya perlu
+meng-assign nilai baru tersebut.</p>
+<p>Contoh:</p>
+<pre class="r"><code>x &lt;- &quot;hello world&quot;
+typeof(x)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Pada contoh di atas, <code>x</code> sekarang memiliki type data
+<code>character</code> tanpa menyebabkan error.</p>
+<p>*Catatan: Sifat dynamic R membuatnya sangat fleksibel dan bisa
+membuat coding di R menjadi lebih cepat dibandingkan bahasa statis.
+Namun, tentu ini memiliki cost, yaitu R relatif lebih lambat
+dibandingkan bahasa pemrograman statis.</p>
 </div>
 <div id="data-structure" class="section level3">
 <h3>Data structure</h3>
@@ -519,11 +550,11 @@ untuk single value.</p>
 hanya menggunakan single value saja. Makanya mengapa data structure ini
 perlu benar – benar dipahami.</p>
 <p>Di R ada beberapa jenis data structure yang perlu kalian pahami:</p>
-<ul>
-<li>Vector, yaitu kumpulan nilai – nilai yang memiliki type data yang
-sama. Untuk membuat vector, kalian harus menggunakan syntax c().
-Contoh:</li>
-</ul>
+<div id="vector" class="section level4">
+<h4>Vector</h4>
+<p>Yaitu kumpulan nilai – nilai yang memiliki type data yang sama. Untuk
+membuat vector, kalian harus menggunakan syntax <code>c()</code>.</p>
+<p>Contoh:</p>
 <pre class="r"><code>x &lt;- c(1, 2, 3, 4, 5) # vector integer
 y &lt;-  c(1.2, 3.2, 5.0) # vector double
 my_var &lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE) # vector logical
@@ -542,13 +573,14 @@ print(x)</code></pre>
 <p>*catatan: fungsi print() digunakan untuk menampilkan objek di
 console. sedangkan class() digunakan untuk mengecek class dari objek
 tersebut. class akan dibahas di topik sendiri.</p>
-<ul>
-<li>List, yaitu Kumpulan nilai yang memiliki type data berbeda. Ini
-menjadikan list ini cukup powerful dan fleksibel. Untuk membuat list
-kalian menggunakan fungsi list(). List dapat menampung list lainnya,
-atau data struktur lain seperti vector, matriks, dan dataframe yang akan
-dijelaskan pada bagian selanjutnya. Contoh:</li>
-</ul>
+</div>
+<div id="list" class="section level4">
+<h4>List</h4>
+<p>Yaitu Kumpulan nilai yang memiliki type data berbeda. Ini menjadikan
+list ini cukup powerful dan fleksibel. Untuk membuat list kalian
+menggunakan fungsi list(). List dapat menampung list lainnya, atau data
+struktur lain seperti vector, matriks, dan dataframe yang akan
+dijelaskan pada bagian selanjutnya. Contoh:</p>
 <pre class="r"><code>my_list &lt;- list(c(1,2,3), c(&quot;hello&quot;, &quot;world&quot;), list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;))
 print(my_list)</code></pre>
 <pre><code>## [[1]]
@@ -566,29 +598,31 @@ print(my_list)</code></pre>
 ## 
 ## [[3]][[3]]
 ## [1] &quot;c&quot;</code></pre>
-<ul>
-<li>Matriks, yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri
-dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang
-kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar.
-Untuk membuat matriks kalian harus menggunakan fungsi matrix().
-Contoh:</li>
-</ul>
+</div>
+<div id="matriks" class="section level4">
+<h4>Matriks</h4>
+<p>Yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri dari baris
+dan kolom. Definisi matriks di R, sama seperti matriks yang kalian
+pelajari di mata kuliah atau mata Pelajaran matematika dasar. Untuk
+membuat matriks kalian harus menggunakan fungsi <code>matrix()</code>.
+Contoh:</p>
 <pre class="r"><code>my_matrix &lt;- matrix(1:9, nrow = 3, ncol = 3)
 print(my_matrix)</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    7
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
-<ul>
-<li>Data frame, yaitu bentuk spesial dan bisa dibilang kombinasi dari
-semua data structure yang disebutkan sebelumnya. Kalian bisa
-menganalogikan data frame seperti table di excel, yaitu terdiri dari
-baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah
-vector, artinya dalam kolom harus memiliki type data yang sama, dan
-setiap kolom tidak harus sama type datanya antara satu kolom dengan yang
-lain. Untuk keperluan analisis dan kasus real world, umumnya yang
-digunakan adalah data frame ini. Contoh:</li>
-</ul>
+</div>
+<div id="dataframe" class="section level4">
+<h4>Dataframe</h4>
+<p>Yaitu bentuk spesial dan bisa dibilang kombinasi dari semua data
+structure yang disebutkan sebelumnya. Kalian bisa menganalogikan data
+frame seperti table di excel, yaitu terdiri dari baris dan kolom,
+bedanya dengan matriks adalah setiap kolom itu adalah vector, artinya
+dalam kolom harus memiliki type data yang sama, dan setiap kolom tidak
+harus sama type datanya antara satu kolom dengan yang lain. Untuk
+keperluan analisis dan kasus real world, umumnya yang digunakan adalah
+data frame ini. Contoh:</p>
 <pre class="r"><code>my_df &lt;- data.frame(nomor = c(1,2,3), nama = c(&quot;david&quot;, &quot;jhon&quot;, &quot;doe&quot;))
 print(my_df)</code></pre>
 <pre><code>##   nomor  nama
@@ -597,6 +631,7 @@ print(my_df)</code></pre>
 ## 3     3   doe</code></pre>
 <pre class="r"><code>class(my_df)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
+</div>
 </div>
 <div id="copy-on-modify" class="section level3">
 <h3>Copy on Modify</h3>
@@ -617,9 +652,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x14805aab8&quot;</code></pre>
+<pre><code>## [1] &quot;0x12f8ee588&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x14805aab8&quot;</code></pre>
+<pre><code>## [1] &quot;0x12f8ee588&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -630,10 +665,28 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x14899c418&quot;</code></pre>
+<pre><code>## [1] &quot;0x12fc5caa8&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
+</div>
+<div id="comment" class="section level3">
+<h3>Comment</h3>
+<p>Comment merupakan bagian dari coding yang kalian input di R yang
+tidak akan dieksekusi oleh R. Comment biasanya digunakan oleh programmer
+untuk memberikan penjelasan agar bisa dipahami oleh programmer lain atau
+user dari program yang kalian buat. Ini juga akan membantu kalian
+men-trace program yang sudah kalian buat, terutama ketika program yang
+kalian buat akan digunakan lagi di masa yang akan datang. Untuk
+memberikan comment, kalian cukup menambahkan hash (#) sebelum text dan R
+akan mengabaikan text tersebut.</p>
+<p>Contoh:</p>
+<pre class="r"><code># Ini adalah comment
+
+#Jumlah siswa yang mendaftar di sekolah X sebanyak 500 siswa.
+jumlah_siswa &lt;- 500
+print(jumlah_siswa)</code></pre>
+<pre><code>## [1] 500</code></pre>
 <p>Nah, sampai di sini jika kalian masih bingung kalian bisa pause atau
 ulang lagi tutorial ini dari awal. Silahkan kalian coba pahami perlahan
 – lahan.</p>
