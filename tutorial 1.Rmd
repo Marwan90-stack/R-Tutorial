@@ -14,13 +14,13 @@ Hai, saya Marwan. Saya seorang statistisi.
 
 R adalah bahasa pemrograman yang didesain secara khusus untuk analisis statistik dan data visualisation.
 
-R itu cukup populer, apabila di lihat ranking popularitas Bahasa pemrograman di [TIOBE INDEX](https://www.tiobe.com/tiobe-index/), R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
+R itu cukup populer. Apabila dilihat ranking popularitas bahasa pemrograman di [TIOBE INDEX](https://www.tiobe.com/tiobe-index/), R konsisten berada di jajaran 20 besar. Ini artinya, segmen pengguna R itu cukup besar. 
 
 Namun, tidak seperti bahasa pemrograman lain, para pengguna R umumnya tidak berlatar belakang programmer, mereka menggunakan R untuk menyelesaikan kasus tertentu yang mereka miliki. Mereka umumnya statistisi, data analist, data scientist, dosen atau mahasiswa yang sedang mengerjakan projek tugas mereka.
 
 Saya pun juga dulu seperti itu. Saya mulai mengenal R ketika akan menyelesaikan skripsi pada program D-IV di Sekolah Tinggi Ilmu Statistik.
 
-Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian sangat rentan dengan masalah. Misalnya, ketika ketemu bugs dalam program yang kalian buat, kalian akan sulit mendeteksinya dan ini bisa bikin frustasi. 
+Saya rasa, ini sah – sah saja ya. Namun, jika kalian hanya menggunakan R untuk problem solving kalian tanpa tahu basiknya, kalian sangat rentan dengan masalah. Misalnya, ketika menemukan bugs atau terjadi error dalam program yang kalian buat, kalian akan sulit mengatasinya dan ini bisa bikin frustasi. 
 
 Untuk menghindari masalah yang saya sebutkan sebelumnya kalian setidaknya perlu memahami R dari ground up, dari basic. 
 
@@ -30,12 +30,13 @@ Nah, di series tutorial ini saya akan menemani kalian belajar R dari dasar. Hal 
 
 Nah, hal – hal yang perlu kalian ketahui adalah:
 
-### Value (nilai) atau object
+### Literal Value (nilai)
 
-Segala sesuatu yang kalian input d R, pada dasarnya adalah literal value atau sederhananya kalian bisa sebut objek, misalnya ketika kalian mengetikan angka 1, 2, 3, dst.
+Segala sesuatu yang kalian input d R, baik text atau numeric, pada dasarnya adalah literal value atau sederhananya kalian bisa sebut objek, misalnya ketika kalian mengetikan angka 1, 2, 3, dan text seperti "hello world".
 
 ```{r}
 1
+
 "hello world"
 ```
 
@@ -44,7 +45,7 @@ Segala sesuatu yang kalian input d R, pada dasarnya adalah literal value atau se
 
 Konsep selanjutnya yang perlu kalian pahami adalah setiap literal value atau objek memiliki type datanya masing – masing. Ada beberapa type data di R, antara lain:
 
--	Numeric yaitu type data berupa angka, terdiri dari type data double dan integer. 
+#### Numeric yaitu type data berupa angka, terdiri dari type data double dan integer. 
 contoh:
 
 ```{r}
@@ -52,16 +53,18 @@ typeof(5)
 typeof(10.5)
 ```
 
-pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double (decimal). Jadi, secara default, setiap angka yang ada di R memiliki tipe data double. Untuk membuat tipe data integer (bilangan bulat) secara eksplisit, kalian perlu menambahkan `L` dibelakang bilangan tersebu.
+Pada contoh di atas, baik angka 5 dan 10.5 memiliki tipe data double (decimal). Jadi, secara default, setiap angka yang ada di R memiliki tipe data double. Untuk membuat tipe data integer (bilangan bulat) secara eksplisit, kalian perlu menambahkan `L` dibelakang bilangan tersebut.
 Contoh:
 
 ```{r}
 typeof(5L)
 ```
 
-*catatan: typeof adalah syntax untuk mengecek tipe data dari suatu value atau objek.
+*catatan: `typeof()` adalah syntax untuk mengecek tipe data dari suatu value atau objek.
 
--	Character, yaitu type data berupa text. ditandai dengan penggunaan “” atau ‘’. 
+#### Character
+
+Yaitu type data berupa text. ditandai dengan penggunaan “” atau ‘’. 
 Contoh:
 
 ```{r}
@@ -69,8 +72,9 @@ typeof("hello world")
 typeof('my name is Marwan')
 ```
 
+#### Logical 
 
--	Logical yaitu type data berupa logika. Nilainya terdiri dari TRUE atau FALSE.
+Yaitu type data berupa logika. Nilainya terdiri dari `TRUE` atau `FALSE`. Type data ini umumnya digunakan untuk mengecek kondisi tertentu baik bernilai benar (`TRUE`) atau salah (`FALSE`).
 Contoh:
 
 ```{r}
@@ -115,7 +119,30 @@ Ketika kalian membuat suatu objek atau nilai, nilai tersebut akan terhapus denga
 
 R memiliki konsep “garbage collector” yang tugasnya membersihkan (menghapus) objek, jika objek tersebut tidak di-assign ke sebuah variabel.
 
-Assignment di R menggunakan <- atau =. Namun, yang sering digunakan adalah <-. Ini vilosofis ya, artinya kalian meng-assign nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri. Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan -> untuk meng-assign nilai di sebelah kiri ke variabel yang ada di sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh dalam alur pemrograman.
+Assignment di R menggunakan <- atau =. Namun, yang sering digunakan adalah <-. Ini vilosofis ya, artinya kalian meng-assign nilai pada sebelah kanan persamaan ke variabel yang ada di sebelah kiri. Lalu apakah sebaliknya bisa? Jawabannya, bisa. Kamu bisa menggunakan -> untuk meng-assign nilai di sebelah kiri ke variabel yang ada di sebelah kanan persamaan, tapi ini sangat jarang digunakan, dan agak aneh dalam alur pemrograman. Contoh assignment sebenarnya sudah ditunjukan pada topik variabel di atas.
+
+Penggunaan type data di R bersifat dinamis (dynamically typed). Ini artinya, tidak seperti bahasa pemrograman yang bersifat statis (contohnya: C, Java), assignment suatu nilai ke variabel tidak perlu dideklarasikan type datanya terlebih dahulu.
+
+Contoh:
+
+```{r}
+x <- 5
+typeof(x)
+
+```
+
+Pada contoh di atas, saya meng-assign nilai `5` pada variabel `x`. Meskipun saya tidak mendaklarasikan type datanya, R akan mengetahui bahwa angka `5` adalah type data numeric (double). Nah jika dalam perjalanannya saya mau merubah nilai `x` dengan type data character, maka saya hanya perlu meng-assign nilai baru tersebut.
+
+Contoh:
+
+```{r}
+x <- "hello world"
+typeof(x)
+```
+
+Pada contoh di atas, `x` sekarang memiliki type data `character` tanpa menyebabkan error. 
+
+*Catatan: Sifat dynamic R membuatnya sangat fleksibel dan bisa membuat coding di R menjadi lebih cepat dibandingkan bahasa statis. Namun, tentu ini memiliki cost, yaitu R relatif lebih lambat dibandingkan bahasa pemrograman statis.
 
 
 ###	Data structure
@@ -129,7 +156,10 @@ Dalam prakteknya, misalnya data analisis, kalian hampir tidak akan hanya menggun
 
 Di R ada beberapa jenis data structure yang perlu kalian pahami:
 
--	Vector, yaitu kumpulan nilai – nilai yang memiliki type data yang sama. Untuk membuat vector, kalian harus menggunakan syntax c(). 
+#### Vector
+
+Yaitu kumpulan nilai – nilai yang memiliki type data yang sama. Untuk membuat vector, kalian harus menggunakan syntax `c()`. 
+
 Contoh:
 
 ```{r}
@@ -148,7 +178,9 @@ class(my_string) #character
 
 *catatan: fungsi print() digunakan untuk menampilkan objek di console. sedangkan class() digunakan untuk mengecek class dari objek tersebut. class akan dibahas di topik sendiri.
 
--	List, yaitu Kumpulan nilai yang memiliki type data berbeda. Ini menjadikan list ini cukup powerful dan fleksibel. Untuk membuat list kalian menggunakan fungsi list(). List dapat menampung list lainnya, atau data struktur lain seperti vector, matriks, dan dataframe yang akan dijelaskan pada bagian selanjutnya.
+#### List 
+
+Yaitu Kumpulan nilai yang memiliki type data berbeda. Ini menjadikan list ini cukup powerful dan fleksibel. Untuk membuat list kalian menggunakan fungsi list(). List dapat menampung list lainnya, atau data struktur lain seperti vector, matriks, dan dataframe yang akan dijelaskan pada bagian selanjutnya.
 Contoh:
 
 ```{r}
@@ -157,8 +189,9 @@ print(my_list)
 ```
 
 
+#### Matriks 
 
--	Matriks, yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar. Untuk membuat matriks kalian harus menggunakan fungsi matrix(). 
+Yaitu Kumpulan nilai dalam bentuk 2 dimensi yang terdiri dari baris dan kolom. Definisi matriks di R, sama seperti matriks yang kalian pelajari di mata kuliah atau mata Pelajaran matematika dasar. Untuk membuat matriks kalian harus menggunakan fungsi `matrix()`. 
 Contoh:
 
 ```{r}
@@ -167,7 +200,9 @@ print(my_matrix)
 ```
 
 
--	Data frame, yaitu bentuk spesial dan bisa dibilang kombinasi dari semua data structure yang disebutkan sebelumnya. Kalian bisa menganalogikan data frame seperti table di excel, yaitu terdiri dari baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah vector, artinya dalam kolom harus memiliki type data yang sama, dan setiap kolom tidak harus sama type datanya antara satu kolom dengan yang lain. Untuk keperluan analisis dan kasus real world, umumnya yang digunakan adalah data frame ini. 
+#### Dataframe 
+
+Yaitu bentuk spesial dan bisa dibilang kombinasi dari semua data structure yang disebutkan sebelumnya. Kalian bisa menganalogikan data frame seperti table di excel, yaitu terdiri dari baris dan kolom, bedanya dengan matriks adalah setiap kolom itu adalah vector, artinya dalam kolom harus memiliki type data yang sama, dan setiap kolom tidak harus sama type datanya antara satu kolom dengan yang lain. Untuk keperluan analisis dan kasus real world, umumnya yang digunakan adalah data frame ini. 
 Contoh:
 
 ```{r}
@@ -218,6 +253,21 @@ obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat
 
 
 Artinya y sekarang adalah objek yang berbeda dari x.
+
+### Comment
+
+Comment merupakan bagian dari coding yang kalian input di R yang tidak akan dieksekusi oleh R. Comment biasanya digunakan oleh programmer untuk memberikan penjelasan agar bisa dipahami oleh programmer lain atau user dari program yang kalian buat. Ini juga akan membantu kalian men-trace program yang sudah kalian buat, terutama ketika program yang kalian buat akan digunakan lagi di masa yang akan datang. Untuk memberikan comment, kalian cukup menambahkan hash (#) sebelum text dan R akan mengabaikan text tersebut.
+
+Contoh:
+
+```{r}
+# Ini adalah comment
+
+#Jumlah siswa yang mendaftar di sekolah X sebanyak 500 siswa.
+jumlah_siswa <- 500
+print(jumlah_siswa)
+```
+
 
 Nah, sampai di sini jika kalian masih bingung kalian bisa pause atau ulang lagi tutorial ini dari awal. Silahkan kalian coba pahami perlahan – lahan. 
 
