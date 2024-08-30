@@ -76,7 +76,7 @@ typeof('my name is Marwan')
 
 #### Logical 
 
-Yaitu type data berupa logika. Nilainya terdiri dari `TRUE` atau `FALSE`. Type data ini umumnya digunakan untuk mengecek kondisi tertentu baik bernilai benar (`TRUE`) atau salah (`FALSE`).
+Yaitu type data berupa logika. Nilainya terdiri dari `TRUE` atau `FALSE`. Type data ini umumnya digunakan untuk mengecek kondisi tertentu apakah bernilai benar (`TRUE`) atau salah (`FALSE`).
 Contoh:
 
 ```{r}

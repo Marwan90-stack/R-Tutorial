@@ -436,7 +436,7 @@ Contoh:</p>
 <h4>Logical</h4>
 <p>Yaitu type data berupa logika. Nilainya terdiri dari
 <code>TRUE</code> atau <code>FALSE</code>. Type data ini umumnya
-digunakan untuk mengecek kondisi tertentu baik bernilai benar
+digunakan untuk mengecek kondisi tertentu apakah bernilai benar
 (<code>TRUE</code>) atau salah (<code>FALSE</code>). Contoh:</p>
 <pre class="r"><code>typeof(TRUE)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
@@ -652,9 +652,9 @@ print(x)</code></pre>
 <p>maka y dan x masih merujuk pada objek yang sama yang tersimpan di
 memory.</p>
 <pre class="r"><code>obj_address(x)</code></pre>
-<pre><code>## [1] &quot;0x136c77b88&quot;</code></pre>
+<pre><code>## [1] &quot;0x133315188&quot;</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x136c77b88&quot;</code></pre>
+<pre><code>## [1] &quot;0x133315188&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) # TRUE  x dan y tersimpan pada alamat memory yang sama</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Jika kalian memodifikasi salah satu element dari y, maka y akan
@@ -665,7 +665,7 @@ dimodifikasi.</p>
 print(y)</code></pre>
 <pre><code>## [1] 100   2   3   4   5</code></pre>
 <pre class="r"><code>obj_address(y)</code></pre>
-<pre><code>## [1] &quot;0x126fd2228&quot;</code></pre>
+<pre><code>## [1] &quot;0x1331d8a28&quot;</code></pre>
 <pre class="r"><code>obj_address(x) == obj_address(y) #FALSE artinya y sekarang tersimpan pada alamat memory yang berbeda dengan x</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <p>Artinya y sekarang adalah objek yang berbeda dari x.</p>
